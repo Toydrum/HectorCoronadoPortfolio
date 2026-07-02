@@ -1,7 +1,7 @@
 import { Profile, Stat } from './models';
 
-/** Set to your GoatCounter site code (e.g. 'hectorcoronado') to enable analytics. */
-export const GOATCOUNTER_CODE: string | null = null;
+/** GoatCounter site code — analytics dashboard at https://hectorcoronado.goatcounter.com */
+export const GOATCOUNTER_CODE: string | null = 'hectorcoronado';
 
 export const PROFILE: Profile = {
   name: 'Héctor Coronado',
