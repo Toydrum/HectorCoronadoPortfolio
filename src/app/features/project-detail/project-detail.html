@@ -1,0 +1,80 @@
+<div class="detail container">
+  @if (project(); as p) {
+    <a routerLink="/" fragment="projects" class="back mono">← {{ i18n.t().projects.back }}</a>
+
+    <header
+      class="band card"
+      [style.--accent]="p.accent || 'var(--cyan)'"
+      [style.view-transition-name]="'proj-' + p.slug"
+    >
+      <span class="glyph" aria-hidden="true">{{ p.glyph }}</span>
+      <div class="head-text">
+        <div class="meta mono">
+          <span class="kind">
+            {{ p.kind === 'personal' ? i18n.t().projects.kindPersonal : i18n.t().projects.kindProfessional }}
+          </span>
+          <span class="year">{{ p.year }}</span>
+        </div>
+        <h1>{{ p.title }}</h1>
+        <p class="tagline">{{ i18n.tr(p.tagline) }}</p>
+      </div>
+    </header>
+
+    <div class="columns">
+      <article class="body" appReveal>
+        @for (paragraph of p.description; track $index) {
+          <p>{{ i18n.tr(paragraph) }}</p>
+        }
+
+        <h2 class="sub mono">// {{ i18n.t().projects.highlightsTitle }}</h2>
+        <ul class="highlights">
+          @for (highlight of p.highlights; track $index) {
+            <li>{{ i18n.tr(highlight) }}</li>
+          }
+        </ul>
+      </article>
+
+      <aside class="panel" appReveal [revealDelay]="120">
+        <div class="card box">
+          <h3 class="sub mono">// {{ i18n.t().projects.stackTitle }}</h3>
+          <div class="stack">
+            @for (tech of p.stack; track tech) {
+              <span class="chip">{{ tech }}</span>
+            }
+          </div>
+
+          @if (p.links.length) {
+            <h3 class="sub mono links-title">// {{ i18n.t().projects.linksTitle }}</h3>
+            <div class="links">
+              @for (link of p.links; track link.url) {
+                <a class="btn btn-ghost small" [href]="link.url" target="_blank" rel="noopener">
+                  {{ link.kind === 'github' ? i18n.t().projects.code : i18n.t().projects.demo }} ↗
+                </a>
+              }
+            </div>
+          }
+        </div>
+      </aside>
+    </div>
+
+    <nav class="pager">
+      @if (neighbors().prev; as prev) {
+        <a [routerLink]="['/projects', prev.slug]" class="pg card">
+          <span class="dir mono">← {{ i18n.t().projects.prev }}</span>
+          <span class="name">{{ prev.title }}</span>
+        </a>
+      }
+      @if (neighbors().next; as next) {
+        <a [routerLink]="['/projects', next.slug]" class="pg card right">
+          <span class="dir mono">{{ i18n.t().projects.next }} →</span>
+          <span class="name">{{ next.title }}</span>
+        </a>
+      }
+    </nav>
+  } @else {
+    <div class="missing">
+      <p class="mono">404 — {{ i18n.t().projects.notFound }}</p>
+      <button type="button" class="btn btn-ghost" (click)="goHome()">{{ i18n.t().projects.back }}</button>
+    </div>
+  }
+</div>

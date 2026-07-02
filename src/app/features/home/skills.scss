@@ -1,0 +1,108 @@
+.groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: 1.4rem;
+}
+
+.group {
+  padding: 1.5rem 1.6rem;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+
+  /* glare highlight driven by the tilt directive */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      420px circle at var(--glare-x, 50%) var(--glare-y, 50%),
+      rgba(255, 255, 255, 0.05),
+      transparent 45%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color: rgba(139, 92, 246, 0.45);
+    box-shadow: var(--shadow-card), var(--glow-violet);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.1rem;
+
+  .glyph {
+    color: var(--cyan);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    margin: 0;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.3rem;
+
+  .skill-name {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+  }
+
+  .pct {
+    font-size: 0.72rem;
+    color: var(--text-faint);
+  }
+}
+
+.bar {
+  height: 6px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 0;
+  border-radius: 4px;
+  background: var(--gradient);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.45);
+  transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+/* bars animate when the reveal directive marks the card visible */
+.group.revealed .fill {
+  width: var(--target-w, 0%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill {
+    width: var(--target-w, 0%);
+  }
+}

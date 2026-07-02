@@ -1,0 +1,37 @@
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="index">{{ i18n.t().experience.index }} //</span>
+      <h2>{{ i18n.t().experience.title }}</h2>
+      <p class="subtitle">{{ i18n.t().experience.subtitle }}</p>
+    </div>
+
+    <div class="timeline" #timeline>
+      <div class="line" aria-hidden="true">
+        <div class="line-fill" [style.transform]="'scaleY(' + progress() + ')'"></div>
+      </div>
+
+      @for (item of items; track item.organization + item.period.en; let i = $index) {
+        <article class="entry" [class.alt]="i % 2 === 1" appReveal [revealDelay]="i * 100">
+          <div class="node" aria-hidden="true"></div>
+          <div class="card body">
+            <div class="meta mono">
+              <span class="period">{{ i18n.tr(item.period) }}</span>
+              <span class="kind" [class.edu]="item.kind === 'education'">
+                {{ item.kind === 'work' ? i18n.t().experience.work : i18n.t().experience.education }}
+              </span>
+            </div>
+            <h3>{{ i18n.tr(item.role) }}</h3>
+            <p class="org mono">@ {{ item.organization }}</p>
+            <p class="summary">{{ i18n.tr(item.summary) }}</p>
+            <div class="tags">
+              @for (tag of item.tags; track tag) {
+                <span class="chip">{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

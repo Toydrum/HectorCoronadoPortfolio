@@ -1,0 +1,60 @@
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="index">{{ i18n.t().projects.index }} //</span>
+      <h2>{{ i18n.t().projects.title }}</h2>
+      <p class="subtitle">{{ i18n.t().projects.subtitle }}</p>
+    </div>
+
+    <div class="filters" role="group" appReveal>
+      @for (f of filters; track f) {
+        <button
+          type="button"
+          class="filter mono"
+          [class.active]="filter() === f"
+          (click)="filter.set(f)"
+        >{{ filterLabel(f) }}</button>
+      }
+    </div>
+
+    <div class="grid">
+      @for (project of visible(); track project.slug; let i = $index) {
+        <a
+          class="card project"
+          [routerLink]="['/projects', project.slug]"
+          appTilt
+          appReveal
+          [revealDelay]="(i % 3) * 90"
+        >
+          <div
+            class="band"
+            [style.--accent]="project.accent || 'var(--cyan)'"
+            [style.view-transition-name]="'proj-' + project.slug"
+          >
+            <span class="glyph" aria-hidden="true">{{ project.glyph }}</span>
+            <span class="kind mono">
+              {{ project.kind === 'personal' ? i18n.t().projects.kindPersonal : i18n.t().projects.kindProfessional }}
+            </span>
+          </div>
+
+          <div class="body">
+            <div class="title-row">
+              <h3>{{ project.title }}</h3>
+              <span class="year mono">{{ project.year }}</span>
+            </div>
+            <p class="tagline">{{ i18n.tr(project.tagline) }}</p>
+            <div class="stack">
+              @for (tech of project.stack.slice(0, 4); track tech) {
+                <span class="chip">{{ tech }}</span>
+              }
+              @if (project.stack.length > 4) {
+                <span class="chip more">+{{ project.stack.length - 4 }}</span>
+              }
+            </div>
+            <span class="cta mono">{{ i18n.t().projects.caseStudy }} →</span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="index">{{ i18n.t().about.index }} //</span>
+      <h2>{{ i18n.t().about.title }}</h2>
+    </div>
+
+    <div class="grid">
+      <div class="bio" appReveal>
+        @for (paragraph of i18n.t().about.bio; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+
+        <div class="stats">
+          @for (stat of stats; track stat.label.en; let i = $index) {
+            <div class="stat" appReveal [revealDelay]="i * 90">
+              <span class="value mono text-gradient">
+                <app-count-up [value]="stat.value" [suffix]="stat.suffix" />
+              </span>
+              <span class="label">{{ i18n.tr(stat.label) }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <aside class="side" appReveal [revealDelay]="120">
+        <div class="avatar card" aria-hidden="true">
+          <div class="ring"></div>
+          <div class="ring r2"></div>
+          <span class="monogram mono text-gradient">HC</span>
+          <span class="dot d1"></span>
+          <span class="dot d2"></span>
+        </div>
+
+        @defer (on viewport) {
+          <div class="gh card">
+            <p class="gh-title mono">{{ i18n.t().about.githubTitle }}</p>
+            @if (github.state() === 'ready' && github.stats(); as stats) {
+              <div class="gh-numbers">
+                <div><strong>{{ stats.publicRepos }}</strong> {{ i18n.t().about.githubRepos }}</div>
+                <div><strong>{{ stats.followers }}</strong> {{ i18n.t().about.githubFollowers }}</div>
+              </div>
+              <p class="gh-sub mono">{{ i18n.t().about.githubRecent }}</p>
+              <ul>
+                @for (repo of stats.recentRepos; track repo.name) {
+                  <li>
+                    <a [href]="repo.url" target="_blank" rel="noopener">{{ repo.name }}</a>
+                    @if (repo.language) {
+                      <span class="lang mono">{{ repo.language }}</span>
+                    }
+                  </li>
+                }
+              </ul>
+            } @else if (github.state() === 'error') {
+              <p class="gh-error">{{ i18n.t().about.githubError }}</p>
+            } @else {
+              <p class="gh-loading mono">fetching<span class="caret">&nbsp;</span></p>
+            }
+          </div>
+        } @placeholder {
+          <div class="gh card gh-ph"></div>
+        }
+      </aside>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<section class="section" id="contact">
+  <div class="container narrow">
+    <div class="section-head center" appReveal>
+      <span class="index">{{ i18n.t().contact.index }} //</span>
+      <h2>{{ i18n.t().contact.title }}</h2>
+      <p class="subtitle">{{ i18n.t().contact.subtitle }}</p>
+    </div>
+
+    <div class="actions" appReveal [revealDelay]="120">
+      <button type="button" class="btn btn-primary big" appMagnetic (click)="copyEmail()">
+        @if (copied()) {
+          {{ i18n.t().contact.copied }}
+        } @else {
+          {{ i18n.t().contact.copy }}
+        }
+      </button>
+      <a class="mail mono" [href]="'mailto:' + profile.email">
+        {{ i18n.t().contact.orMail }} → {{ profile.email }}
+      </a>
+    </div>
+
+    <div class="links mono" appReveal [revealDelay]="220">
+      <a [href]="profile.github" target="_blank" rel="noopener">github ↗</a>
+      <span class="sep">·</span>
+      <a [href]="profile.linkedin" target="_blank" rel="noopener">linkedin ↗</a>
+      <span class="sep">·</span>
+      <span class="loc">{{ i18n.tr(profile.location) }}</span>
+    </div>
+  </div>
+</section>

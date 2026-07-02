@@ -1,0 +1,37 @@
+<div class="backdrop" (click)="fx.terminalOpen.set(false)">
+  <div class="window" role="dialog" aria-modal="true" [attr.aria-label]="i18n.t().terminal.title" (click)="$event.stopPropagation()">
+    <div class="titlebar">
+      <span class="dot red" (click)="fx.terminalOpen.set(false)"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="title mono">{{ i18n.t().terminal.title }}</span>
+    </div>
+
+    <div class="screen mono" #scroller>
+      @for (line of lines(); track $index) {
+        <div class="line" [class.accent]="line.kind === 'accent'" [class.input]="line.kind === 'input'">
+          @if (line.kind === 'input') {
+            <span class="ps1">hector&#64;portfolio:~$</span>
+          }
+          <span class="txt">{{ line.text }}</span>
+        </div>
+      }
+
+      <div class="line prompt-line">
+        <span class="ps1">hector&#64;portfolio:~$</span>
+        <input
+          #cmdInput
+          type="text"
+          class="mono"
+          [value]="current()"
+          (input)="current.set(cmdInput.value)"
+          (keydown)="onKeydown($event)"
+          spellcheck="false"
+          autocomplete="off"
+          autocapitalize="off"
+          aria-label="terminal input"
+        >
+      </div>
+    </div>
+  </div>
+</div>

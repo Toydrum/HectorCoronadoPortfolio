@@ -1,0 +1,127 @@
+/**
+ * English UI strings — the source of truth for the dictionary shape.
+ * `es.ts` must satisfy `Dict`, so missing translations fail the build.
+ */
+export const EN = {
+  nav: {
+    about: 'About',
+    skills: 'Skills',
+    experience: 'Experience',
+    projects: 'Projects',
+    contact: 'Contact',
+    openTerminal: 'Open terminal',
+    toggleMenu: 'Toggle menu',
+  },
+  hero: {
+    greet: 'hello_world.ts',
+    iAm: "Hi, I'm",
+    pitch:
+      'I build web platforms and the automation behind them — Angular on the front, Node and Python on the back, and pipelines moving thousands of records a day in between.',
+    ctaProjects: 'View projects',
+    ctaCv: 'Download CV',
+    scroll: 'scroll',
+  },
+  about: {
+    title: 'About me',
+    index: '01',
+    bio: [
+      'I’m a full-stack developer working at the intersection of product and operations: I ship user-facing features, then build the automation that keeps them running at scale.',
+      'These days that means a live B2B trade platform — real-time chat, payments, document workflows — plus enrichment and outreach pipelines orchestrated with n8n, and a serverless AWS architecture on the horizon.',
+      'I like systems that survive contact with production: quota-aware designs, canary rollouts, rollback paths. And I like building things that make interviewers say "wait, press what key?"',
+    ],
+    factsTitle: 'Quick facts',
+    githubTitle: 'Live from GitHub',
+    githubFollowers: 'followers',
+    githubRepos: 'public repos',
+    githubRecent: 'recently active',
+    githubError: 'GitHub API is rate-limiting — try again later.',
+  },
+  skills: {
+    title: 'Skills',
+    index: '02',
+    subtitle: 'The tools I reach for, honestly weighted.',
+  },
+  experience: {
+    title: 'Experience',
+    index: '03',
+    subtitle: 'Where I’ve built things.',
+    work: 'work',
+    education: 'education',
+  },
+  projects: {
+    title: 'Projects',
+    index: '04',
+    subtitle: 'Selected work — personal builds and professional case studies.',
+    filterAll: 'All',
+    filterPersonal: 'Personal',
+    filterProfessional: 'Professional',
+    kindPersonal: 'personal',
+    kindProfessional: 'case study',
+    caseStudy: 'Read more',
+    code: 'Code',
+    demo: 'Live',
+    back: 'Back to projects',
+    highlightsTitle: 'Highlights',
+    stackTitle: 'Stack',
+    linksTitle: 'Links',
+    next: 'Next',
+    prev: 'Previous',
+    notFound: 'Project not found.',
+  },
+  contact: {
+    title: 'Let’s build something',
+    index: '05',
+    subtitle:
+      'I’m open to interesting roles and projects. The fastest way to reach me is email — one click below copies it.',
+    copy: 'Copy email',
+    copied: 'Copied ✔',
+    orMail: 'or open your mail client',
+  },
+  footer: {
+    built: 'Designed & built with Angular — signals, zoneless, zero UI libraries.',
+    source: 'View source',
+    hint: 'psst… press ~',
+  },
+  terminal: {
+    title: 'hector@portfolio: ~',
+    welcome: 'Welcome to the portfolio shell. Type "help" to see what I can do.',
+    help: [
+      'about ............ who is Héctor?',
+      'skills ........... top of the stack',
+      'projects ......... list project slugs',
+      'open <slug> ...... open a project case study',
+      'contact .......... how to reach me',
+      'lang en|es ....... switch language',
+      'matrix ........... you’ll see',
+      'sudo hire-me ..... the important one',
+      'clear / exit ..... housekeeping',
+    ],
+    unknown: 'command not found. Try "help".',
+    aboutOut:
+      'Héctor Coronado — full-stack developer (Angular · Node · Python · AWS · automation). Currently building B2B trade tech.',
+    skillsOut: 'Angular · TypeScript · Node.js · Python · AWS · n8n · Make · Apps Script · PostgreSQL',
+    contactOut: 'email: {email} · github: {github} · linkedin: {linkedin}',
+    openUsage: 'usage: open <slug> — run "projects" to list slugs.',
+    openUnknown: 'no project with that slug. Run "projects".',
+    opening: 'opening {slug}…',
+    langUsage: 'usage: lang en|es',
+    langSet: 'language switched to {lang}.',
+    hireMe: [
+      '┌──────────────────────────────────────┐',
+      '│  ACCESS GRANTED: candidate unlocked  │',
+      '│                                      │',
+      '│  ✔ ships features end to end         │',
+      '│  ✔ automates the boring parts        │',
+      '│  ✔ reads the docs (really)           │',
+      '│                                      │',
+      '│  → opening contact section…          │',
+      '└──────────────────────────────────────┘',
+    ],
+    matrixOut: 'wake up, Neo…',
+  },
+  toast: {
+    konami: 'Achievement unlocked: true hacker 🏆',
+  },
+};
+
+export type Dict = typeof EN;

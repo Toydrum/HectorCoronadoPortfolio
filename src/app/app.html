@@ -1,0 +1,20 @@
+<app-cursor-glow />
+<app-navbar />
+
+<main>
+  <router-outlet />
+</main>
+
+<app-footer />
+
+@if (fx.terminalOpen()) {
+  <app-terminal />
+}
+
+@if (fx.matrixActive()) {
+  <app-matrix-rain />
+}
+
+@if (fx.toast(); as message) {
+  <div class="toast mono" role="status">{{ message }}</div>
+}

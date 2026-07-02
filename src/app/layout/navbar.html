@@ -1,0 +1,46 @@
+<header class="nav" [class.scrolled]="scrolled()">
+  <div class="container nav-inner">
+    <a routerLink="/" fragment="top" class="logo mono" (click)="closeMenu()" aria-label="Home">
+      <span class="text-gradient">HC</span><span class="logo-dim">://</span>
+    </a>
+
+    <nav class="links" [class.open]="menuOpen()" aria-label="Sections">
+      @for (section of sections; track section; let i = $index) {
+        <a routerLink="/" [fragment]="section" (click)="closeMenu()">
+          <span class="idx mono">0{{ i + 1 }}.</span> {{ label(section) }}
+        </a>
+      }
+    </nav>
+
+    <div class="actions">
+      <button
+        class="lang mono"
+        type="button"
+        (click)="i18n.toggle()"
+        [attr.aria-label]="'Language: ' + i18n.lang().toUpperCase()"
+      >
+        <span class="pill" [class.right]="i18n.lang() === 'es'" aria-hidden="true"></span>
+        <span class="opt" [class.active]="i18n.lang() === 'en'">EN</span>
+        <span class="opt" [class.active]="i18n.lang() === 'es'">ES</span>
+      </button>
+
+      <button
+        class="term mono"
+        type="button"
+        (click)="fx.toggleTerminal()"
+        [attr.aria-label]="i18n.t().nav.openTerminal"
+        title="~"
+      >&gt;_</button>
+
+      <button
+        class="burger"
+        type="button"
+        (click)="menuOpen.set(!menuOpen())"
+        [attr.aria-label]="i18n.t().nav.toggleMenu"
+        [attr.aria-expanded]="menuOpen()"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

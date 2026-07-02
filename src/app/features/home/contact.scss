@@ -1,0 +1,54 @@
+.narrow {
+  max-width: 640px;
+  text-align: center;
+}
+
+.section-head.center {
+  h2::after {
+    margin-inline: auto;
+  }
+
+  .subtitle {
+    margin-inline: auto;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 2.4rem;
+}
+
+.big {
+  font-size: 1.05rem;
+  padding: 1rem 2.4rem;
+  min-width: 220px;
+  justify-content: center;
+}
+
+.mail {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+
+  &:hover {
+    color: var(--cyan);
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+
+  .sep {
+    color: var(--text-faint);
+  }
+
+  .loc {
+    color: var(--text-faint);
+  }
+}
