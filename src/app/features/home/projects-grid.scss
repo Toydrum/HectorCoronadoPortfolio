@@ -108,6 +108,20 @@
     color: var(--accent);
     background: rgba(7, 11, 20, 0.5);
   }
+
+  .metric {
+    position: absolute;
+    bottom: 0.7rem;
+    left: 0.8rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.22rem 0.65rem;
+    border-radius: 999px;
+    color: #04121a;
+    background: var(--accent);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 55%, transparent);
+  }
 }
 
 .body {

@@ -1,0 +1,99 @@
+<!doctype html>
+<!-- Social share card (1200x630). Regenerate og.png with:
+     msedge --headless=new --screenshot=public/og.png --window-size=1200,630 file:///.../tools/og/og.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #070b14;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #e6edf6;
+    position: relative;
+  }
+  .glow-a, .glow-b {
+    position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.32;
+  }
+  .glow-a { width: 640px; height: 640px; background: #22d3ee; top: -320px; left: -180px; }
+  .glow-b { width: 640px; height: 640px; background: #8b5cf6; bottom: -340px; right: -160px; }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(148,163,184,.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.07) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .dot { position: absolute; border-radius: 50%; }
+  .content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 96px;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    width: fit-content;
+    border: 2px solid rgba(52,211,153,.5); border-radius: 999px;
+    background: rgba(52,211,153,.1);
+    color: #34d399; font-size: 22px; font-weight: 600;
+    padding: 8px 22px; margin-bottom: 30px;
+    font-family: Consolas, monospace;
+  }
+  .badge .p { width: 12px; height: 12px; border-radius: 50%; background: #34d399; box-shadow: 0 0 18px #34d399; }
+  h1 {
+    font-size: 92px; font-weight: 800; letter-spacing: -2px; line-height: 1.05;
+    background: linear-gradient(120deg, #22d3ee, #8b5cf6);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 18px;
+  }
+  .role { font-size: 40px; font-weight: 700; color: #e6edf6; margin-bottom: 34px; }
+  .role .prompt { color: #22d3ee; font-family: Consolas, monospace; }
+  .stack { display: flex; gap: 14px; }
+  .chip {
+    font-family: Consolas, monospace; font-size: 24px; color: #9aa8bd;
+    border: 2px solid rgba(148,163,184,.28); border-radius: 999px;
+    background: #0f1626; padding: 8px 24px;
+  }
+  .url {
+    position: absolute; bottom: 42px; left: 96px;
+    font-family: Consolas, monospace; font-size: 24px; color: #64748b;
+  }
+  .hc {
+    position: absolute; top: 48px; right: 84px;
+    font-family: Consolas, monospace; font-size: 34px; font-weight: 800;
+    background: linear-gradient(120deg, #22d3ee, #8b5cf6);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hc span { color: #64748b; font-weight: 500; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow-a"></div>
+  <div class="glow-b"></div>
+
+  <div class="dot" style="top:120px;left:820px;width:6px;height:6px;background:#22d3ee;box-shadow:0 0 12px #22d3ee"></div>
+  <div class="dot" style="top:210px;left:1050px;width:8px;height:8px;background:#8b5cf6;box-shadow:0 0 12px #8b5cf6"></div>
+  <div class="dot" style="top:470px;left:940px;width:5px;height:5px;background:#22d3ee;box-shadow:0 0 10px #22d3ee"></div>
+  <div class="dot" style="top:540px;left:700px;width:7px;height:7px;background:#ec4899;box-shadow:0 0 12px #ec4899"></div>
+  <div class="dot" style="top:90px;left:400px;width:5px;height:5px;background:#8b5cf6;box-shadow:0 0 10px #8b5cf6"></div>
+
+  <div class="hc">HC<span>://</span></div>
+
+  <div class="content">
+    <div class="badge"><div class="p"></div>OPEN TO NEW OPPORTUNITIES</div>
+    <h1>Héctor Coronado</h1>
+    <div class="role"><span class="prompt">&gt;_</span> Senior Full-Stack Engineer</div>
+    <div class="stack">
+      <div class="chip">Angular</div>
+      <div class="chip">Node.js</div>
+      <div class="chip">Python</div>
+      <div class="chip">AWS</div>
+      <div class="chip">Automation</div>
+    </div>
+  </div>
+
+  <div class="url">toydrum.github.io/HectorCoronadoPortfolio</div>
+</body>
+</html>

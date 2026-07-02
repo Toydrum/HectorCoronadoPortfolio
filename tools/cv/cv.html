@@ -1,0 +1,174 @@
+<!doctype html>
+<!-- Branded CV render (source of truth: cv.md). Regenerate the PDF with:
+     msedge --headless=new --print-to-pdf=public/cv/HectorCoronado_CV.pdf --no-pdf-header-footer file:///.../tools/cv/cv.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Héctor Coronado — CV</title>
+<style>
+  @page { size: A4; margin: 13mm 14mm; }
+  * { margin: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 9.3pt; line-height: 1.45; color: #1f2937;
+  }
+  a { color: #0e7490; text-decoration: none; }
+  h1 {
+    font-size: 20pt; font-weight: 800; letter-spacing: -0.02em; color: #0f172a;
+  }
+  h1 .accent { color: #0891b2; }
+  .headline { font-size: 10.5pt; font-weight: 700; color: #7c3aed; margin: 2px 0 4px; }
+  .contact-row {
+    font-size: 8.4pt; color: #475569; margin-bottom: 10px;
+    display: flex; flex-wrap: wrap; gap: 4px 10px;
+  }
+  .contact-row .sep { color: #cbd5e1; }
+  .rule { height: 2.5px; background: linear-gradient(90deg, #0891b2, #7c3aed); border-radius: 2px; margin-bottom: 10px; }
+  h2 {
+    font-size: 10.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;
+    color: #0891b2; margin: 11px 0 5px;
+    border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;
+  }
+  p.summary { text-align: justify; }
+  ul { padding-left: 15px; margin: 3px 0; }
+  li { margin-bottom: 2.2px; text-align: justify; }
+  .role {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-top: 7px; flex-wrap: wrap;
+  }
+  .role h3 { font-size: 10pt; font-weight: 700; color: #0f172a; }
+  .role .org { color: #7c3aed; }
+  .role .dates { font-size: 8.6pt; color: #64748b; font-weight: 600; white-space: nowrap; }
+  .role-note { font-size: 8.6pt; color: #64748b; font-style: italic; margin: 1px 0 2px; }
+  .tech { font-size: 8.2pt; color: #475569; margin-top: 2px; }
+  .tech strong { color: #334155; }
+  .skills-grid { display: grid; grid-template-columns: 1fr; gap: 2.5px; }
+  .skills-grid .line strong { color: #0f172a; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 18px; }
+  .avoid-break { break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Héctor Manuel Coronado Vargas <span class="accent">·</span> <span class="accent">HC://</span></h1>
+  <div class="headline">Senior Full-Stack Engineer | Automation, Data Systems &amp; AWS | Node.js · Angular · Python</div>
+  <div class="contact-row">
+    <span>Mexico City, Mexico · UTC-6 · Remote-ready · International teams</span><span class="sep">|</span>
+    <span>+52 (55) 1631 7091</span><span class="sep">|</span>
+    <a href="mailto:hm.covar@gmail.com">hm.covar@gmail.com</a><span class="sep">|</span>
+    <a href="https://github.com/Toydrum">github.com/Toydrum</a><span class="sep">|</span>
+    <a href="https://www.linkedin.com/in/hectormanuelcoronadovargas">linkedin.com/in/hectormanuelcoronadovargas</a><span class="sep">|</span>
+    <a href="https://toydrum.github.io/HectorCoronadoPortfolio/">toydrum.github.io/HectorCoronadoPortfolio</a>
+  </div>
+  <div class="rule"></div>
+</header>
+
+<section>
+  <h2>Professional Summary</h2>
+  <p class="summary">Senior Full-Stack Engineer and automation-focused technical consultant with 6+ years building production web platforms, backend services, data pipelines, and cloud-native systems. Strong in Node.js/NestJS, Angular/React, Python, Google Apps Script, n8n/Make.com, AWS, PostgreSQL, MongoDB, Redis, and reliability practices. Recent work includes B2B trade-intelligence systems across a large JavaScript monolith, Knack workflows, a 157k-row Apps Script sync engine, Python data cleanup, Supabase/Instantly integrations, and Angular + AWS serverless architecture.</p>
+</section>
+
+<section>
+  <h2>Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="line"><strong>Backend &amp; APIs:</strong> Node.js, NestJS, Express, Fastify, Django/DRF, Java Spring Boot, REST, GraphQL, WebSockets, gRPC, OpenAPI/Swagger, DTOs, validation, JWT/RBAC.</div>
+    <div class="line"><strong>Frontend:</strong> Angular, React, Vue.js, TypeScript, JavaScript, HTML5, CSS3, SCSS, RxJS, NgRx, SSR, responsive UI, API integration, auth/session flows.</div>
+    <div class="line"><strong>Automation &amp; Data Platforms:</strong> n8n, Make.com, Google Apps Script, Google Sheets, Knack Builder/API, Instantly, Supabase, SendGrid, Stripe, Python, Pandas, CSV pipelines, ETL/ELT, data normalization.</div>
+    <div class="line"><strong>Cloud, DevOps &amp; Reliability:</strong> AWS EC2, S3, CloudFront, Lambda, API Gateway, Cognito, ECS/Fargate, EKS, IAM, CloudWatch, SQS/SNS, EventBridge, Docker, Kubernetes, Helm, Terraform, GitHub Actions, GitLab CI/CD.</div>
+    <div class="line"><strong>Data, Quality &amp; Architecture:</strong> PostgreSQL, MySQL, MongoDB, DynamoDB, Redis, RDS/Aurora, BigQuery, Snowflake, OpenSearch, Jest, Cypress, Pact, Pytest, microservices, serverless, event-driven systems, DDD, SOLID/OOP, OpenAI API, LangChain, RAG.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Professional Experience</h2>
+
+  <div class="avoid-break">
+    <div class="role">
+      <h3>Senior Full-Stack, Automation &amp; Data Engineer <span class="org">· Proceti</span></h3>
+      <span class="dates">Apr 2026 – Present</span>
+    </div>
+    <p class="role-note">Client engagement: Simultrayd B2B trade-intelligence platform and operations systems.</p>
+    <ul>
+      <li>Engineered across four live production surfaces: a Knack customer platform, a Google Sheets/Apps Script trade pipeline, n8n/Make.com automation workflows, and Python/Instantly/Supabase outreach-data systems.</li>
+      <li>Stabilized and extended a 25k+ line JavaScript monolith, shipping trade ownership controls, document workflows, catalog-backed matching, CSV tools, UI fixes, and support patches.</li>
+      <li>Designed and rolled out a 157k-row Apps Script sync engine with header-name mapping, dirty queues, locks, canaries, before-image logs, rollback paths, and formula-preserving writes.</li>
+      <li>Improved high-scale pipeline performance: a staging sweep dropped from ~45–60 s to ~10 s, and a row-move path improved from 29.6 s to 0.64 s (46×) in test validation.</li>
+      <li>Built Python and automation pipelines reducing 83,320 raw records to 39,333 enrichment-ready rows; loaded an 8,258-record commodity catalog and backfilled 27,937 connections with zero reported failures.</li>
+      <li>Migrated Make.com workflows into n8n blueprints (enrichment, rematching, lead processing, password reset, outreach) using caching, batching, schema validation, webhooks, and JWT/HMAC-style auth.</li>
+      <li>Created an Angular + AWS serverless migration architecture (strangler-fig, feature flags, Cognito custom auth, API Gateway + Lambda TypeScript, Aurora Serverless v2, Drizzle, Zod).</li>
+      <li>Drove release confidence through adversarial reviews, gated rollouts, 1-row canaries, soak windows, rollback copies, and operational runbooks.</li>
+    </ul>
+    <p class="tech"><strong>Tech:</strong> JavaScript, TypeScript, Angular, Node.js, Python, Google Apps Script, Knack, n8n, Make.com, Supabase, SendGrid, REST APIs, JWT/HMAC, AWS (Lambda, API Gateway, Cognito, Aurora, S3, CloudFront), PostgreSQL, MongoDB, Git.</p>
+  </div>
+
+  <div class="avoid-break">
+    <div class="role">
+      <h3>Software Engineer (Full-Stack &amp; SRE) <span class="org">· Neoris</span></h3>
+      <span class="dates">Apr 2024 – Present</span>
+    </div>
+    <p class="role-note">Customer-facing systems in a polyglot microservices architecture.</p>
+    <ul>
+      <li>Owned backend capabilities across Node.js, Django, and Java Spring Boot services, focusing on integration correctness, service boundaries, reliability, and maintainable delivery.</li>
+      <li>Led modernization from Express + tsc to NestJS on Fastify + SWC, improving runtime responsiveness under load and reducing build/test cycle times.</li>
+      <li>Built cross-cutting backend concerns: validation pipes, JWT/RBAC guards, logging/tracing interceptors, timeouts, correlation IDs, and request context propagation.</li>
+      <li>Strengthened Kafka, SQS, SNS, and EventBridge workflows with idempotent consumers, retry policies, DLQs, and event-driven orchestration.</li>
+      <li>Improved PostgreSQL/RDS paths through query/index tuning, transaction hygiene, Redis caching, and rate limiting; raised release safety with Docker, GitHub Actions, CloudWatch, and Sentry.</li>
+    </ul>
+    <p class="tech"><strong>Tech:</strong> NestJS, Fastify, SWC, Node.js, Django/DRF, Java Spring Boot, Angular, PostgreSQL, Redis, Kafka, SQS/SNS, EventBridge, ECS/Fargate, CloudFront/S3, OpenTelemetry, CloudWatch, Sentry, GitHub Actions, Docker, Terraform.</p>
+  </div>
+
+  <div class="avoid-break">
+    <div class="role">
+      <h3>Full-Stack Developer &amp; SRE <span class="org">· Pharmaceutical Company (NDA)</span></h3>
+      <span class="dates">Nov 2023 – Sep 2024</span>
+    </div>
+    <p class="role-note">Regulated product environment with backend, frontend integration, cloud, and reliability responsibilities.</p>
+    <ul>
+      <li>Built NestJS/Express APIs across REST and GraphQL with DTO-based design, validation, pagination/filtering standards, OpenAPI documentation, and consistent error semantics.</li>
+      <li>Implemented asynchronous processing with SQS/SNS and BullMQ/Redis to smooth spikes, isolate failures, support retries, and preserve recovery paths.</li>
+      <li>Improved PostgreSQL performance with Prisma/TypeORM schema discipline, indexing strategy, transaction hygiene, and Redis-based caching/throttling.</li>
+      <li>Operated containerized workloads on EKS/Kubernetes using Helm, HPA, CloudWatch/CloudTrail, Secrets Manager/SSM, KMS, and WAF.</li>
+    </ul>
+    <p class="tech"><strong>Tech:</strong> NestJS, Express, Node.js, Angular, NgRx, RxJS, GraphQL, OpenAPI, PostgreSQL, Prisma, TypeORM, MongoDB, Redis, BullMQ, WebSockets, SQS/SNS, EKS/Kubernetes, Helm, Docker, AWS.</p>
+  </div>
+
+  <div class="avoid-break">
+    <div class="role">
+      <h3>Full-Stack Developer <span class="org">· Independent / Freelance</span></h3>
+      <span class="dates">2019 – Present</span>
+    </div>
+    <p class="role-note">End-to-end SaaS, payment, automation, and cloud delivery for independent projects and clients.</p>
+    <ul>
+      <li>Delivered production-grade SaaS solutions with API design, background processing, webhook-driven integrations, logging/monitoring, and safe rollback practices.</li>
+      <li>Implemented Stripe payment and subscription workflows with replay-safe webhooks, durable event tracking, reconciliation logic, and analytics-friendly event storage.</li>
+      <li>Built Angular/Vue/Django applications, REST APIs, serverless utilities on AWS Lambda, and Docker-first development workflows.</li>
+    </ul>
+    <p class="tech"><strong>Tech:</strong> Django, Angular, Vue.js, Node.js, Docker, AWS EC2/S3/CloudFront/Lambda, Stripe, MongoDB, REST APIs, Git.</p>
+  </div>
+</section>
+
+<section class="avoid-break">
+  <h2>Selected Projects</h2>
+  <ul>
+    <li><strong>Portfolio</strong> — interactive Angular 21 site (signals, zoneless, hand-rolled effects), CI/CD to GitHub Pages: <a href="https://toydrum.github.io/HectorCoronadoPortfolio/">toydrum.github.io/HectorCoronadoPortfolio</a></li>
+    <li><strong>ZoolandingPage</strong> — conversion-focused landing-page product, Angular 22 in production: <a href="https://zoolandingpage.com.mx/">zoolandingpage.com.mx</a></li>
+    <li><strong>LyricMaker</strong> — Django + Angular application with Docker, AWS Lambda, S3, and LLM integration for lyric/script generation and analysis.</li>
+    <li><strong>SaaS Billing System</strong> — Django + Vue.js billing platform with Stripe subscriptions, webhook workflows, MongoDB event storage, and AWS deployment.</li>
+  </ul>
+</section>
+
+<section class="avoid-break">
+  <h2>Education &amp; Certifications</h2>
+  <div class="two-col">
+    <span>· Diploma in Data Science — BEDU, 2025</span>
+    <span>· Full Stack Development — Coderhouse, 2023</span>
+    <span>· Backend with Node.js &amp; Stripe — Coderhouse, 2023</span>
+    <span>· React &amp; Angular Specializations — Platzi/Coderhouse, 2023</span>
+    <span>· Audio Engineering — Fermatta Academy, 2008–2014</span>
+    <span>· Languages: Spanish (native) · English (professional)</span>
+  </div>
+</section>
+
+</body>
+</html>

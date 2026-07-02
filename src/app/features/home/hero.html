@@ -2,6 +2,12 @@
   <app-particle-canvas />
 
   <div class="container hero-content">
+    @if (profile.openToWork) {
+      <p class="available mono">
+        <span class="pulse" aria-hidden="true"></span>{{ i18n.t().hero.available }}
+      </p>
+    }
+
     <p class="greet mono"><span class="prompt">$</span> cat {{ i18n.t().hero.greet }}</p>
 
     <h1>
@@ -16,13 +22,21 @@
 
     <p class="pitch">{{ i18n.t().hero.pitch }}</p>
 
+    <div class="hero-stack" aria-label="Core stack">
+      @for (tech of profile.heroStack; track tech) {
+        <span class="chip">{{ tech }}</span>
+      }
+    </div>
+
     <div class="ctas">
       <a routerLink="/" fragment="projects" class="btn btn-primary" appMagnetic>
         {{ i18n.t().hero.ctaProjects }} <span aria-hidden="true">→</span>
       </a>
-      <a [href]="profile.cvUrl" class="btn btn-ghost" appMagnetic download>
-        {{ i18n.t().hero.ctaCv }} <span aria-hidden="true">↓</span>
-      </a>
+      @if (profile.cvUrl; as cvUrl) {
+        <a [href]="cvUrl" class="btn btn-ghost" appMagnetic download>
+          {{ i18n.t().hero.ctaCv }} <span aria-hidden="true">↓</span>
+        </a>
+      }
     </div>
 
     <div class="social">

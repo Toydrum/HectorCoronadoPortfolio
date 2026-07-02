@@ -1,27 +1,35 @@
 import { Profile, Stat } from './models';
 
+/** Set to your GoatCounter site code (e.g. 'hectorcoronado') to enable analytics. */
+export const GOATCOUNTER_CODE: string | null = null;
+
 export const PROFILE: Profile = {
   name: 'Héctor Coronado',
-  // TODO(Hector): swap for a personal email if you prefer not to publish the work one.
-  email: 'hector@simultrayd.com',
-  location: { en: 'Mexico · Remote-friendly', es: 'México · Disponible remoto' },
+  fullName: 'Héctor Manuel Coronado Vargas',
+  headline: {
+    en: 'Senior Full-Stack Engineer',
+    es: 'Ingeniero Full-Stack Senior',
+  },
+  email: 'hm.covar@gmail.com',
+  location: { en: 'Mexico City · UTC-6 · Remote-ready', es: 'CDMX · UTC-6 · Listo para remoto' },
   github: 'https://github.com/Toydrum',
   githubUser: 'Toydrum',
-  // TODO(Hector): set your real LinkedIn URL.
-  linkedin: 'https://www.linkedin.com/in/hector-coronado',
+  linkedin: 'https://www.linkedin.com/in/hectormanuelcoronadovargas',
   cvUrl: 'cv/HectorCoronado_CV.pdf',
+  openToWork: true,
   roles: [
-    { en: 'Full-Stack Developer', es: 'Desarrollador Full-Stack' },
-    { en: 'Angular · Node · Python', es: 'Angular · Node · Python' },
-    { en: 'Automation Engineer', es: 'Ingeniero de Automatización' },
-    { en: 'API Integration Specialist', es: 'Especialista en Integración de APIs' },
+    { en: 'Senior Full-Stack Engineer', es: 'Ingeniero Full-Stack Senior' },
+    { en: 'Automation · Data Systems · AWS', es: 'Automatización · Sistemas de Datos · AWS' },
+    { en: 'Angular · Node.js · Python', es: 'Angular · Node.js · Python' },
+    { en: 'Reliability-first delivery', es: 'Entrega con enfoque en confiabilidad' },
   ],
+  heroStack: ['Angular', 'Node.js', 'NestJS', 'Python', 'AWS', 'PostgreSQL', 'n8n'],
 };
 
-// TODO(Hector): tune these numbers to taste.
+// Numbers backed by the master CV — keep them defensible in an interview.
 export const STATS: Stat[] = [
-  { value: 5, suffix: '+', label: { en: 'years coding', es: 'años programando' } },
-  { value: 15, suffix: '+', label: { en: 'projects shipped', es: 'proyectos entregados' } },
-  { value: 20, suffix: '+', label: { en: 'APIs integrated', es: 'APIs integradas' } },
+  { value: 6, suffix: '+', label: { en: 'years in production', es: 'años en producción' } },
+  { value: 157, suffix: 'k', label: { en: 'rows in one sync engine', es: 'filas en un motor de sync' } },
   { value: 10, suffix: 'k+', label: { en: 'automated ops / day', es: 'operaciones automatizadas / día' } },
+  { value: 46, suffix: '×', label: { en: 'best perf win shipped', es: 'mejor mejora de rendimiento' } },
 ];

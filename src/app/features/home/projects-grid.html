@@ -35,6 +35,9 @@
             <span class="kind mono">
               {{ project.kind === 'personal' ? i18n.t().projects.kindPersonal : i18n.t().projects.kindProfessional }}
             </span>
+            @if (project.metric; as metric) {
+              <span class="metric mono">{{ i18n.tr(metric) }}</span>
+            }
           </div>
 
           <div class="body">

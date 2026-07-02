@@ -14,6 +14,9 @@
             {{ p.kind === 'personal' ? i18n.t().projects.kindPersonal : i18n.t().projects.kindProfessional }}
           </span>
           <span class="year">{{ p.year }}</span>
+          @if (p.metric; as metric) {
+            <span class="metric">{{ i18n.tr(metric) }}</span>
+          }
         </div>
         <h1>{{ p.title }}</h1>
         <p class="tagline">{{ i18n.tr(p.tagline) }}</p>

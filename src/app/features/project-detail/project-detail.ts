@@ -1,4 +1,5 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, computed, effect, inject, input } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router, RouterLink } from '@angular/router';
 import { I18nService } from '../../core/i18n.service';
 import { RevealDirective } from '../../core/reveal.directive';
@@ -13,6 +14,8 @@ import { PROJECTS } from '../../data/projects';
 export class ProjectDetail {
   protected readonly i18n = inject(I18nService);
   private readonly router = inject(Router);
+  private readonly title = inject(Title);
+  private readonly meta = inject(Meta);
 
   /** Route param, bound via withComponentInputBinding(). */
   readonly slug = input.required<string>();
@@ -27,6 +30,16 @@ export class ProjectDetail {
       next: PROJECTS[(idx + 1) % PROJECTS.length],
     };
   });
+
+  constructor() {
+    // Shareable per-project title + description (overrides the route title).
+    effect(() => {
+      const p = this.project();
+      if (!p) return;
+      this.title.setTitle(`${p.title} — Héctor Coronado`);
+      this.meta.updateTag({ name: 'description', content: this.i18n.tr(p.tagline) });
+    });
+  }
 
   protected goHome(): void {
     void this.router.navigate(['/'], { fragment: 'projects' });

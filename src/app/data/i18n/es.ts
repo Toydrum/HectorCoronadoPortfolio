@@ -8,14 +8,17 @@ export const ES: Dict = {
     experience: 'Experiencia',
     projects: 'Proyectos',
     contact: 'Contacto',
+    hireMe: 'Contrátame',
     openTerminal: 'Abrir terminal',
     toggleMenu: 'Abrir menú',
+    skipToContent: 'Saltar al contenido',
   },
   hero: {
+    available: 'Abierto a nuevas oportunidades',
     greet: 'hola_mundo.ts',
     iAm: 'Hola, soy',
     pitch:
-      'Construyo plataformas web y la automatización que las sostiene — Angular en el front, Node y Python en el back, y pipelines moviendo miles de registros al día en medio.',
+      'Ingeniero full-stack senior con más de 6 años entregando plataformas en producción y la automatización que las sostiene — Angular y Node en la superficie, Python y AWS por debajo, y pipelines moviendo decenas de miles de registros al día en medio.',
     ctaProjects: 'Ver proyectos',
     ctaCv: 'Descargar CV',
     scroll: 'scroll',
@@ -71,10 +74,12 @@ export const ES: Dict = {
     title: 'Construyamos algo',
     index: '05',
     subtitle:
-      'Estoy abierto a roles y proyectos interesantes. La vía más rápida es el correo — un clic abajo lo copia.',
+      'Estoy abierto a roles senior de full-stack, automatización y plataforma. La vía más rápida es el correo — un clic abajo lo copia.',
     copy: 'Copiar correo',
     copied: 'Copiado ✔',
+    cv: 'Descargar CV',
     orMail: 'o abre tu cliente de correo',
+    mailSubject: 'Oportunidad para Héctor Coronado',
   },
   footer: {
     built: 'Diseñado y construido con Angular — signals, zoneless, cero librerías de UI.',

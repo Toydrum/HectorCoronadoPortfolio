@@ -5,6 +5,7 @@ import { Footer } from './layout/footer';
 import { CursorGlow } from './features/fx/cursor-glow';
 import { MatrixRain } from './features/fx/matrix-rain';
 import { Terminal } from './features/terminal/terminal';
+import { AnalyticsService } from './core/analytics.service';
 import { FxService } from './core/fx.service';
 import { I18nService } from './core/i18n.service';
 
@@ -22,7 +23,7 @@ const KONAMI = [
 })
 export class App implements OnDestroy {
   protected readonly fx = inject(FxService);
-  private readonly i18n = inject(I18nService);
+  protected readonly i18n = inject(I18nService);
 
   private konamiIdx = 0;
 
@@ -56,6 +57,7 @@ export class App implements OnDestroy {
 
   constructor() {
     document.addEventListener('keydown', this.onKeydown);
+    inject(AnalyticsService).init();
   }
 
   ngOnDestroy(): void {

@@ -82,41 +82,49 @@
     animation-duration: 18s;
   }
 
+  /* Each .dot is an invisible ring-sized box that spins; its ::before is the
+     visible dot pinned to the ring edge — a true orbit at any card size. */
   .dot {
     position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+    pointer-events: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      margin-left: -4px;
+      border-radius: 50%;
+    }
   }
 
   .d1 {
-    top: 14%;
-    left: 50%;
-    background: var(--cyan);
-    box-shadow: var(--glow-cyan);
-    animation: orbit-1 26s linear infinite;
+    inset: 14%;
+    animation: spin 26s linear infinite;
+
+    &::before {
+      top: -4px;
+      background: var(--cyan);
+      box-shadow: var(--glow-cyan);
+    }
   }
 
   .d2 {
-    bottom: 26%;
-    left: 50%;
-    background: var(--violet);
-    box-shadow: var(--glow-violet);
+    inset: 26%;
+    animation: spin 18s linear infinite reverse;
+
+    &::before {
+      bottom: -4px;
+      background: var(--violet);
+      box-shadow: var(--glow-violet);
+    }
   }
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes orbit-1 {
-  from {
-    transform: rotate(0deg) translateX(0);
-  }
-  to {
-    transform: rotate(360deg) translateX(0);
   }
 }
 

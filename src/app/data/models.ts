@@ -26,6 +26,8 @@ export interface Project {
   glyph: string;
   /** Card accent (CSS color); defaults to cyan. */
   accent?: string;
+  /** Impact badge shown on the card band, e.g. "46× faster". */
+  metric?: Localized;
   featured?: boolean;
 }
 
@@ -58,11 +60,20 @@ export interface Stat {
 
 export interface Profile {
   name: string;
+  /** Legal/full name — used in JSON-LD and the CV, not in the hero. */
+  fullName: string;
+  /** Hero headline under the name. */
+  headline: Localized;
   email: string;
   location: Localized;
   github: string;
   githubUser: string;
   linkedin: string;
-  cvUrl: string;
+  /** null hides every "Download CV" button. */
+  cvUrl: string | null;
+  /** Drives the pulsing "open to opportunities" badge. */
+  openToWork: boolean;
   roles: Localized[];
+  /** Compact stack chips shown in the hero. */
+  heroStack: string[];
 }

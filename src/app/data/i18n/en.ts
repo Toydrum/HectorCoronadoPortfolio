@@ -9,14 +9,17 @@ export const EN = {
     experience: 'Experience',
     projects: 'Projects',
     contact: 'Contact',
+    hireMe: 'Hire me',
     openTerminal: 'Open terminal',
     toggleMenu: 'Toggle menu',
+    skipToContent: 'Skip to content',
   },
   hero: {
+    available: 'Open to new opportunities',
     greet: 'hello_world.ts',
     iAm: "Hi, I'm",
     pitch:
-      'I build web platforms and the automation behind them — Angular on the front, Node and Python on the back, and pipelines moving thousands of records a day in between.',
+      'Senior full-stack engineer with 6+ years shipping production platforms and the automation behind them — Angular and Node on the surface, Python and AWS underneath, and pipelines moving tens of thousands of records a day in between.',
     ctaProjects: 'View projects',
     ctaCv: 'Download CV',
     scroll: 'scroll',
@@ -72,10 +75,12 @@ export const EN = {
     title: 'Let’s build something',
     index: '05',
     subtitle:
-      'I’m open to interesting roles and projects. The fastest way to reach me is email — one click below copies it.',
+      'I’m open to senior full-stack, automation and platform roles. The fastest way to reach me is email — one click below copies it.',
     copy: 'Copy email',
     copied: 'Copied ✔',
+    cv: 'Download CV',
     orMail: 'or open your mail client',
+    mailSubject: 'Opportunity for Héctor Coronado',
   },
   footer: {
     built: 'Designed & built with Angular — signals, zoneless, zero UI libraries.',

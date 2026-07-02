@@ -15,7 +15,7 @@
   /* Text */
   --text: #e6edf6;
   --text-dim: #9aa8bd;
-  --text-faint: #64748b;
+  --text-faint: #7d8da3;
 
   /* Accents */
   --cyan: #22d3ee;
@@ -152,6 +152,26 @@ button {
   outline: 2px solid var(--cyan);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* Keyboard users get a shortcut past the navbar */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 2000;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--cyan);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  transition: top 0.2s ease;
+
+  &:focus-visible {
+    top: 1rem;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -317,6 +337,75 @@ button {
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 0.35s;
+}
+
+/* --------------------------------------------------------------------------
+   Print: a recruiter hitting Ctrl+P gets a clean, light, readable summary
+   -------------------------------------------------------------------------- */
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #f1f5f9;
+    --border: #cbd5e1;
+    --border-strong: #94a3b8;
+    --text: #111827;
+    --text-dim: #374151;
+    --text-faint: #6b7280;
+    --gradient: linear-gradient(120deg, #0891b2, #7c3aed);
+    --glow-cyan: none;
+    --glow-violet: none;
+    --shadow-card: none;
+  }
+
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .nav,
+  app-cursor-glow,
+  app-particle-canvas,
+  app-terminal,
+  app-matrix-rain,
+  .scroll-cue,
+  .filters,
+  .toast,
+  .caret,
+  .hint,
+  .skip-link {
+    display: none !important;
+  }
+
+  /* Never print an unrevealed (opacity: 0) section */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 1.5rem 0;
+  }
+
+  .section {
+    padding: 1.2rem 0;
+    break-inside: avoid-page;
+  }
+
+  a {
+    color: #0e7490;
+  }
+
+  /* Social icons are meaningless on paper — print their targets */
+  .social a::after {
+    content: attr(href);
+    font-size: 0.7rem;
+    margin-left: 0.4rem;
+    color: #6b7280;
+  }
 }
 
 /* --------------------------------------------------------------------------

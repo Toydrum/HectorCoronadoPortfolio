@@ -65,6 +65,32 @@
   gap: 0.7rem;
 }
 
+.hire {
+  padding: 0.42rem 1rem;
+  border-radius: 999px;
+  background: var(--gradient);
+  color: #04121a;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  box-shadow: 0 2px 14px rgba(34, 211, 238, 0.3);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: #04121a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 22px rgba(34, 211, 238, 0.5);
+  }
+}
+
+@media (max-width: 480px) {
+  .hire {
+    padding: 0.38rem 0.75rem;
+    font-size: 0.72rem;
+  }
+}
+
 /* EN ⇄ ES sliding pill */
 .lang {
   position: relative;

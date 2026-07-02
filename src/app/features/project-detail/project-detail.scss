@@ -65,6 +65,17 @@
     font-size: 0.78rem;
     color: var(--text-faint);
   }
+
+  .metric {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    color: #04121a;
+    background: var(--accent);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 55%, transparent);
+  }
 }
 
 .columns {

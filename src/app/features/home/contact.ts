@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { I18nService } from '../../core/i18n.service';
 import { RevealDirective } from '../../core/reveal.directive';
 import { MagneticDirective } from '../../core/magnetic.directive';
@@ -15,6 +15,10 @@ export class Contact {
   protected readonly profile = PROFILE;
   protected readonly copied = signal(false);
 
+  protected readonly mailtoHref = computed(
+    () => `mailto:${PROFILE.email}?subject=${encodeURIComponent(this.i18n.t().contact.mailSubject)}`,
+  );
+
   private timer: ReturnType<typeof setTimeout> | null = null;
 
   protected async copyEmail(): Promise<void> {
@@ -25,7 +29,7 @@ export class Contact {
       this.timer = setTimeout(() => this.copied.set(false), 2200);
     } catch {
       // clipboard unavailable — fall back to the mailto link next to the button
-      location.href = `mailto:${this.profile.email}`;
+      location.href = this.mailtoHref();
     }
   }
 }

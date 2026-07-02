@@ -7,14 +7,21 @@
     </div>
 
     <div class="actions" appReveal [revealDelay]="120">
-      <button type="button" class="btn btn-primary big" appMagnetic (click)="copyEmail()">
-        @if (copied()) {
-          {{ i18n.t().contact.copied }}
-        } @else {
-          {{ i18n.t().contact.copy }}
+      <div class="buttons">
+        <button type="button" class="btn btn-primary big" appMagnetic (click)="copyEmail()">
+          @if (copied()) {
+            {{ i18n.t().contact.copied }}
+          } @else {
+            {{ i18n.t().contact.copy }}
+          }
+        </button>
+        @if (profile.cvUrl; as cvUrl) {
+          <a [href]="cvUrl" class="btn btn-ghost big" appMagnetic download>
+            {{ i18n.t().contact.cv }} <span aria-hidden="true">↓</span>
+          </a>
         }
-      </button>
-      <a class="mail mono" [href]="'mailto:' + profile.email">
+      </div>
+      <a class="mail mono" [href]="mailtoHref()">
         {{ i18n.t().contact.orMail }} → {{ profile.email }}
       </a>
     </div>
