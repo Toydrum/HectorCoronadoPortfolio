@@ -116,7 +116,7 @@ export const ES: Dict = {
       '│  → abriendo sección de contacto…     │',
       '└──────────────────────────────────────┘',
     ],
-    matrixOut: 'despierta, Neo…',
+    matrixOut: 'lluvia matrix: activada',
   },
   toast: {
     konami: 'Logro desbloqueado: hacker de verdad 🏆',

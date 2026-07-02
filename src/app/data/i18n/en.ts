@@ -117,7 +117,7 @@ export const EN = {
       '│  → opening contact section…          │',
       '└──────────────────────────────────────┘',
     ],
-    matrixOut: 'wake up, Neo…',
+    matrixOut: 'matrix rain: on',
   },
   toast: {
     konami: 'Achievement unlocked: true hacker 🏆',
