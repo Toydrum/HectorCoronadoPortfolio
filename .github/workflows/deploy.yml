@@ -49,3 +49,6 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # first-time Pages provisioning can exceed the default 10-min queue timeout
+          timeout: 1200000
