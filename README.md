@@ -41,3 +41,7 @@ Drop your CV at `public/cv/HectorCoronado_CV.pdf` to make the download button wo
 ## Deployment
 
 Every push to `main` builds and publishes to GitHub Pages via `.github/workflows/deploy.yml` (one-time setup: repo **Settings → Pages → Source: GitHub Actions**).
+
+## For AI agents & new contributors
+
+Read **[`AGENTS.md`](AGENTS.md)** first — it documents the intent (this is a hiring artifact), the non-negotiable rules (no UI libraries, no confidential data, offline terminal), the content pipeline (CV PDF / OG card regeneration) and the deploy playbook. `CLAUDE.md` points there too.
