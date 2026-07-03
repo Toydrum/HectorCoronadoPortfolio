@@ -223,25 +223,56 @@ export const PROJECTS: Project[] = [
     slug: 'rodemap2u',
     title: 'RodeMap2U',
     kind: 'personal',
-    year: '2024',
-    glyph: '◈',
-    accent: '#8b5cf6',
+    year: '2026',
+    glyph: '❀',
+    accent: '#4ade80',
+    featured: true,
+    metric: { en: 'Live · offline-first', es: 'En vivo · offline-first' },
     tagline: {
-      en: 'Roadmap-building web app for planning and sharing learning paths.',
-      es: 'Web app para construir, planear y compartir rutas de aprendizaje.',
+      en: 'A local-first PWA for neurodivergent minds: goals grow as living trees, and missed deadlines branch into new paths.',
+      es: 'Una PWA local-first para mentes neurodivergentes: las metas crecen como árboles vivos y las fechas perdidas brotan en caminos nuevos.',
     },
     description: [
       {
-        en: 'A TypeScript web application for laying out roadmaps — sequences of goals and resources — and sharing them. Built end to end as a personal product experiment.',
-        es: 'Una aplicación web en TypeScript para trazar roadmaps — secuencias de metas y recursos — y compartirlos. Construida de punta a punta como experimento personal de producto.',
+        en: 'A goal map that refuses shame mechanics. Every session opens with one gentle question — "Where do you feel you are?" — and a missed deadline is never a failure: it becomes a golden branch point where alternative paths sprout. Rebuilt in 2026 from a 2024 idea into a full shipped product: check-in ritual, forest of real data-drawn trees, focus timer, in-app guide, archive with automatic backups.',
+        es: 'Un mapa de metas que rechaza las mecánicas de vergüenza. Cada sesión abre con una pregunta amable — "¿Dónde sientes que estás?" — y una fecha perdida nunca es un fracaso: se convierte en un nudo dorado del que brotan caminos alternativos. Reconstruida en 2026 desde una idea de 2024 hasta un producto completo: ritual de check-in, bosque de árboles dibujados con datos reales, temporizador de enfoque, guía integrada y archivo con respaldos automáticos.',
+      },
+      {
+        en: 'Everything is hand-rolled, zero UI libraries. The trees are an SVG rendering engine built from scratch: a pure layout function with deterministic organic jitter, tapered bezier limbs, per-tree flower species, pointer pan and pinch zoom, full keyboard navigation. The scenery is alive too — the sky mirrors your latest check-in with drifting fog banks, soft drizzle or a storm with slow lightning, all photosensitivity-safe and fully still under reduced motion.',
+        es: 'Todo hecho a mano, cero librerías de UI. Los árboles son un motor de dibujo SVG desde cero: una función de layout pura con variación orgánica determinista, ramas bezier con grosor cónico, especies de flor por árbol, pan y pinch-zoom, navegación completa por teclado. El escenario también vive — el cielo refleja tu último check-in con bancos de niebla que derivan, llovizna suave o tormenta con relámpagos lentos, todo seguro para fotosensibilidad y totalmente quieto bajo reduce-motion.',
+      },
+      {
+        en: 'Local-first architecture: a ~100-line IndexedDB wrapper with signal-based repositories, atomic multi-record transactions, cross-tab sync via BroadcastChannel, and sync-ready records (revisions + tombstones) prepared for an optional cloud future. Installable offline as a PWA with gentle in-app updates, bilingual ES/EN with compiler-enforced dictionary parity, dyslexia-friendly font option.',
+        es: 'Arquitectura local-first: un wrapper de IndexedDB de ~100 líneas con repositorios basados en signals, transacciones atómicas multi-registro, sincronización entre pestañas vía BroadcastChannel y registros sync-ready (revisiones + tombstones) preparados para una nube opcional. Instalable offline como PWA con actualizaciones amables, bilingüe ES/EN con paridad de diccionarios forzada por el compilador y fuente amigable para dislexia.',
       },
     ],
     highlights: [
-      { en: 'TypeScript across the stack', es: 'TypeScript en todo el stack' },
-      { en: 'Designed, built and shipped solo', es: 'Diseñada, construida y publicada en solitario' },
+      {
+        en: 'Hand-rolled SVG tree-rendering engine — zero UI libraries',
+        es: 'Motor de dibujo de árboles SVG hecho a mano — cero librerías de UI',
+      },
+      {
+        en: 'Branch-on-miss: failure modeled as growth, atomically',
+        es: 'Branch-on-miss: el fallo modelado como crecimiento, atómicamente',
+      },
+      {
+        en: 'Local-first IndexedDB + signals, sync-ready data model',
+        es: 'Local-first con IndexedDB + signals, modelo de datos sync-ready',
+      },
+      {
+        en: 'Accessibility-first: reduced motion, keyboard tree, dyslexia font',
+        es: 'Accesibilidad primero: reduce-motion, árbol por teclado, fuente para dislexia',
+      },
+      {
+        en: 'Installable offline PWA, bilingual with typed dictionary parity',
+        es: 'PWA instalable offline, bilingüe con paridad de diccionarios tipada',
+      },
     ],
-    stack: ['TypeScript', 'JavaScript', 'HTML', 'SCSS'],
-    links: [{ kind: 'github', url: 'https://github.com/Toydrum/RodeMap2U' }],
+    stack: ['Angular 22', 'TypeScript', 'Signals', 'SVG', 'IndexedDB', 'PWA', 'SCSS'],
+    links: [
+      { kind: 'demo', url: 'https://toydrum.github.io/RodeMap2U/' },
+      { kind: 'github', url: 'https://github.com/Toydrum/RodeMap2U' },
+    ],
   },
   {
     slug: 'angular-ecommerce',
