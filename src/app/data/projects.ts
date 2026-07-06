@@ -220,8 +220,8 @@ export const PROJECTS: Project[] = [
     links: [{ kind: 'demo', url: 'https://zoolandingpage.com.mx/' }],
   },
   {
-    slug: 'rodemap2u',
-    title: 'RodeMap2U',
+    slug: 'roadmap2u',
+    title: 'RoadMap2U',
     kind: 'personal',
     year: '2026',
     glyph: '❀',
@@ -270,8 +270,8 @@ export const PROJECTS: Project[] = [
     ],
     stack: ['Angular 22', 'TypeScript', 'Signals', 'SVG', 'IndexedDB', 'PWA', 'SCSS'],
     links: [
-      { kind: 'demo', url: 'https://toydrum.github.io/RodeMap2U/' },
-      { kind: 'github', url: 'https://github.com/Toydrum/RodeMap2U' },
+      { kind: 'demo', url: 'https://toydrum.github.io/RoadMap2U/' },
+      { kind: 'github', url: 'https://github.com/Toydrum/RoadMap2U' },
     ],
   },
   {
